@@ -1,0 +1,103 @@
+li{
+    list-style: none ; display: inline-block;
+    
+    
+}
+li a {
+    color:black; font-size: 18px; font-weight: bold; text-align: right; margin-right: 25px;
+}
+nav {
+
+    border: black;
+    border-radius: 10px;
+}
+
+
+
+.slo {
+
+    background: linear-gradient(90deg, rgba(155, 42, 83, 1) 0%, rgba(13, 84, 184, 1) 50%, rgba(155, 42, 83, 1) 100%);;
+    ;
+    color:white;
+}
+
+
+.pricing-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding: 40px;
+    background: linear-gradient(90deg, rgba(155, 42, 83, 1) 0%, rgba(13, 84, 184, 1) 50%, rgba(155, 42, 83, 1) 100%);;
+    ;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .pricing-card {
+    background: #D97C9E;
+background: linear-gradient(90deg, rgba(217, 124, 158, 1) 0%, rgba(72, 139, 232, 1) 50%, rgba(217, 124, 158, 1) 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 0, 144, 0.3);
+  }
+  
+  .pricing-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .pricing-card p {
+    margin: 5px 0;
+  }
+  
+  .pricing-card h3 {
+    margin-top: 20px;
+    font-size: 28px;
+    color: #ff007f;
+  }
+  
+  .premium {
+    border: 3px solid #ff007f;
+  }
+
+  body {
+
+    font-family: rockstone;
+    
+  background: #9b2a53;
+  background: linear-gradient(90deg, rgba(155, 42, 83, 1) 0%, rgba(13, 84, 184, 1) 50%, rgba(155, 42, 83, 1) 100%);;
+  color:white;
+    
+  }
+  
+
+.ins {
+    color: white;
+}
+
+
+
+.contactt {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding: 40px;
+    background: linear-gradient(90deg, rgba(155, 42, 83, 1) 0%, rgba(13, 84, 184, 1) 50%, rgba(155, 42, 83, 1) 100%);;
+    ;
+    font-family: 'Arial', sans-serif;
+
+}
+.ctt {
+
+    background: #D97C9E;
+    background: linear-gradient(90deg, rgba(217, 124, 158, 1) 0%, rgba(72, 139, 232, 1) 50%, rgba(217, 124, 158, 1) 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        width: 250px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(255, 0, 144, 0.3)
+
+}
