@@ -69,11 +69,12 @@
       const rate = packageValue.includes("Standard") ? 300 : 350;
       const total = rate * hours;
 
-      const message = Hi, I want to book the ${packageValue} for ${hours} hour(s) on ${date}. Total price: R${total}.;
+      // FIXED: wrap string in backticks ``
+      const message = `Hi, I want to book the ${packageValue} for ${hours} hour(s) on ${date}. Total price: R${total}.`;
 
-      // Replace with your real WhatsApp number (no + or spaces)
+      // FIXED: also wrap URL in backticks
       const phone = "27828490048";
-      const url = https://wa.me/${phone}?text=${encodeURIComponent(message)};
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
       // Open WhatsApp
       window.open(url, "_blank");
