@@ -84,28 +84,27 @@
   </form>
 
   <script>
-    document.getElementById("bookingForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      
-      const packageValue = document.getElementById("package").value;
-      const hours = document.getElementById("hours").value;
-      const date = document.getElementById("date").value;
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const packageValue = document.getElementById("package").value;
+    const hours = document.getElementById("hours").value;
+    const date = document.getElementById("date").value;
 
-      // Set price
-      const rate = packageValue.includes("Standard") ? 300 : 350;
-      const total = rate * hours;
+    // Set price
+    const rate = packageValue.includes("Standard") ? 300 : 350;
+    const total = rate * hours;
 
-      const message = 'Hi, I want to book the ${packageValue} for ${hours} hour(s) on ${date}. Total price: R${total}.';
+    // Use backticks for template strings (important!)
+    const message = `Hi, I want to book the ${packageValue} for ${hours} hour(s) on ${date}. Total price: R${total}.`;
 
-      // Replace with your real WhatsApp number (no + or spaces)
-      const phone = "27828490048";
-      const url = 'https://wa.me/${phone}?text=${encodeURIComponent(message)}';
+    const phone = "27828490048";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
-      console.log("Dedirecting to WhatsApp:", url)
-      // Open WhatsApp
-      window.open(url, "_blank");
-    });
-  </script>
+    console.log("Redirecting to WhatsApp:", url);
+    window.open(url, "_blank");
+  });
+</script>
 
 </body>
 </html>
