@@ -67,6 +67,8 @@
   <h2>Book Your DJ</h2>
 
   <form id="bookingForm">
+    <label for="name">Your Name:</label>
+<input type="text" id="name" placeholder="e.g. John" required>
     <label for="package">Choose a Package:</label>
     <select id="package" required>
       <option value="" disabled selected>Select a package</option>
@@ -86,7 +88,7 @@
 <script>
   document.getElementById("bookingForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    
+    const name = document.getElementById("name").value;
     const packageValue = document.getElementById("package").value;
     const hours = document.getElementById("hours").value;
     const date = document.getElementById("date").value;
@@ -96,7 +98,7 @@
     const total = rate * hours;
 
     // Use backticks for template strings (important!)
-    const message = `Hi, I want to book the ${packageValue} for ${hours} hour(s) on ${date}. Total price: R${total}.`;
+    const message = const message = `Hi, my name is ${name}. I want to book the ${packageValue} for ${hours} hour(s) on ${date}. Total price: R${total}.`;
 
     const phone = "27828490048";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
