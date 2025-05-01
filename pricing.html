@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pricing - KERU</title>
 
   <!-- Google Font -->
@@ -12,7 +12,6 @@
 </head>
 <body>
   <style>
-    /* Base Styles */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -30,12 +29,14 @@
       margin: 10px;
       border-radius: 12px;
       backdrop-filter: blur(10px);
+      flex-wrap: nowrap;
     }
 
     .logo {
       font-weight: 800;
       font-size: 24px;
       letter-spacing: 1px;
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -122,38 +123,39 @@
     }
 
     /* Book Button */
-    .bbb a {
-      text-decoration: none;
-  color: white;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
-  transition: 0.3s ease;
-    }
-
-    .bbb a:hover {
-  background: #ff007f;
-  color: white;
-}
-
-    .bbb {
-      list-style: none;
-  padding: 0;
-  margin: 0;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  border: rgba(255,255,255,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
     .book-btn-container {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 30px 0;
+    }
+
+    .bbb a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      transition: 0.3s ease;
+    }
+
+    .bbb a:hover {
+      background: #ff007f;
+      color: white;
+    }
+
+    .bbb {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      border: rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Responsive */
@@ -170,6 +172,12 @@
       .logo {
         font-size: 20px;
         text-align: center;
+        white-space: nowrap;
+      }
+
+      .nav-bar {
+        flex-direction: row;
+        flex-wrap: nowrap;
       }
     }
 
@@ -179,7 +187,6 @@
         width: auto;
       }
     }
-
   </style>
 
   <nav class="nav-bar">
@@ -209,7 +216,6 @@
     </div>
   </div>
 
-  <!-- Centered Button -->
   <div class="book-btn-container">
     <button class="bbb">
       <a href="book.html">Book Your DJ</a>
