@@ -87,7 +87,10 @@
       gap: 30px;
       justify-content: center;
       padding: 40px;
-      background: linear-gradient(90deg, rgba(13,84,184,1) 0%, rgba(155,42,83,1) 50%, rgb(155, 42, 83) 50%);
+      background: radial-gradient(circle at top left, rgba(13, 84, 184, 0.8), transparent 60%),
+              radial-gradient(circle at bottom right, rgba(155, 42, 83, 0.8), transparent 60%),
+              linear-gradient(135deg, #0d54b8, #9b2a53);
+  background-blend-mode: overlay;
     }
 
     .pricing-card {
