@@ -119,20 +119,36 @@
     to { opacity: 1; transform: translateY(0);}
   }
 
-  /* Responsive Nav - Keep logo and links in one row on small screens */
- @media (max-width: 600px) {
-  .nav-bar {
-    flex-direction: row; /* ensure row layout */
-    justify-content: space-between; /* logo left, links right */
-    align-items: center;
-  }
+  /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 10px;
+      }
 
-  .nav-links {
-    flex-direction: row;
-    gap: 10px;
-    margin-left: auto; /* push to right */
-  }
-}
+      .nav-links li a {
+        font-size: 14px;
+        padding: 5px 8px;
+      }
+
+      .logo {
+        font-size: 20px;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .nav-bar {
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .bbb {
+        justify-content: center;
+        width: auto;
+      }
+    }
+  
 </style>
 
 <!-- Navigation -->
