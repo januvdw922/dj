@@ -1,155 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KERU</title>
-  
+
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
 <style>
-/* Base Styles */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(90deg, rgb(155, 42, 83) 0%, rgba(13,84,184,1) 50%, rgba(155,42,83,1) 1010%);
-  color: white;
-}
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, rgb(155, 42, 83) 0%, rgba(13,84,184,1) 50%, rgba(155,42,83,1) 100%);
+    color: white;
+  }
 
-/* Navigation */
-nav.nav-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: rgba(0, 0, 0, 0.4);
-  margin: 10px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-}
-
-.logo {
-  font-weight: 800;
-  font-size: 24px;
-  letter-spacing: 1px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links li {
-  display: inline;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
-  transition: 0.3s ease;
-}
-
-.nav-links a:hover {
-  background: #ff007f;
-  color: white;
-}
-
-/* Slogan */
-.slo {
-  text-align: center;
-  font-size: 24px;
-  padding: 15px 10px;
-  background: linear-gradient(to right, #ff007f, #8f00ff);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-/* Home Content */
-.home-content {
-  padding: 40px;
-  text-align: center;
-  animation: fadeIn 1s ease forwards;
-}
-
-/* Contact Section */
-.contactt {
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-  flex-wrap: wrap;
-}
-
-.ctt {
-  background: linear-gradient(90deg, rgba(217,124,158,1) 0%, rgba(72,139,232,1) 50%, rgba(217,124,158,1) 100%);
-  padding: 30px;
-  border-radius: 12px;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  animation: fadeIn 1.5s ease forwards;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .nav-bar {
-    flex-direction: column;
+  nav.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    margin: 10px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+  }
+
+  .logo {
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: 1px;
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .nav-links li {
+    display: inline;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    transition: 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background: #ff007f;
+    color: white;
+  }
+
+  .slo {
+    text-align: center;
+    font-size: 24px;
+    padding: 15px 10px;
+    background: linear-gradient(to right, #ff007f, #8f00ff);
+    -webkit-background-clip: text;
+    color: transparent;
   }
 
   .home-content {
-    padding: 20px;
+    padding: 40px;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
   }
-}
+
+  .contactt {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    flex-wrap: wrap;
+  }
+
+  .ctt {
+    background: linear-gradient(90deg, rgba(217,124,158,1) 0%, rgba(72,139,232,1) 50%, rgba(217,124,158,1) 100%);
+    padding: 30px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1.5s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+
+  .pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px;
+    background: linear-gradient(90deg, rgba(155, 42, 83, 1) 0%, rgba(13, 84, 184, 1) 50%, rgba(155, 42, 83, 1) 100%);
+  }
+
+  .pricing-card {
+    background: linear-gradient(90deg, rgba(217, 124, 158, 1) 0%, rgba(72, 139, 232, 1) 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 0, 144, 0.4);
+    transition: transform 0.3s ease;
+  }
+
+  .pricing-card:hover {
+    transform: scale(1.05);
+  }
+
+  .pricing-card h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .pricing-card p {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+
+  .pricing-card h3 {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #ff007f;
+  }
+
+  .premium {
+    border: 3px solid #ff007f;
+  }
+
+  @media (max-width: 768px) {
+    .nav-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .nav-links {
+      justify-content: flex-start;
+      width: 100%;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .nav-links li a {
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+  }
+
+  .vbb {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+  }
+
+  .vbb a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    transition: 0.3s ease;
+  }
+
+  .vbb a:hover {
+    background: #ff007f;
+    color: white;
+  }
 </style>
 
+<!-- Navigation -->
 <nav class="nav-bar">
   <div class="logo">KERU BEATS</div>
-  <div class="sound-wave">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="pricing.html">Pricing</a></li>
   </ul>
 </nav>
 
-<h3 class="slo">Beats That Move, Music, That Speaks</h3>
+<h3 class="slo">Beats That Move, Music That Speaks</h3>
 
 <div class="home-content">
   <h2>DJ FOR HIRE</h2>
   <p>Turn up the volume with <b>KERU Beats</b>! We bring the party to you with high-quality sound, pro-level DJ skills, and vibes that get everyone moving.<br>Check out our packages and contact us on WhatsApp & Instagram.</p>
 </div>
 
+<!-- Centered video button -->
+<div class="vbb">
+  <a href="video.html">Play Video</a>
+</div>
+
+<!-- Contact Info -->
 <div class="contactt">
   <div class="ctt">
     <u><strong>For More Info:</strong></u><br>
     <b>072 350 5081</b><br>
     <b>067 780 1555</b><br><br>
     <u><strong>DM us on Instagram:</strong></u><br>
-    <a href="https://www.instagram.com/keru.beatz?igsh=MW54ZnhyNjN4dGM0cA==">keru.beats</a>
+    <a href="https://www.instagram.com/keru.beatz?igsh=MW54ZnhyNjN4dGM0cA==" style="color:white">keru.beats</a>
   </div>
 </div>
 
