@@ -1,152 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KERU</title>
+  
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
 <style>
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(90deg, rgb(155, 42, 83) 0%, rgba(13,84,184,1) 50%, rgba(155,42,83,1) 1010%);
-    color: white;
-  }
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(90deg, rgb(155, 42, 83) 0%, rgba(13,84,184,1) 50%, rgba(155,42,83,1) 1010%);
+  color: white;
+}
 
-  nav.nav-bar {
-    display: flex;
+/* Navigation */
+nav.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  margin: 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: #ff007f;
+  color: white;
+}
+
+/* Slogan */
+.slo {
+  text-align: center;
+  font-size: 24px;
+  padding: 15px 10px;
+  background: linear-gradient(to right, #ff007f, #8f00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Home Content */
+.home-content {
+  padding: 40px;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Contact Section */
+.contactt {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.ctt {
+  background: linear-gradient(90deg, rgba(217,124,158,1) 0%, rgba(72,139,232,1) 50%, rgba(217,124,158,1) 100%);
+  padding: 30px;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .nav-bar {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-    background: rgba(0, 0, 0, 0.4);
-    margin: 10px;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    position: relative;
-  }
-
-  .logo {
-    font-weight: 800;
-    font-size: 24px;
-    letter-spacing: 1px;
-    flex: 1;
   }
 
   .nav-links {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.1);
-    transition: 0.3s ease;
-  }
-
-  .nav-links a:hover {
-    background: #ff007f;
-  }
-
-  .slo {
-    text-align: center;
-    font-size: 24px;
-    padding: 15px 10px;
-    background: linear-gradient(to right, #ff007f, #8f00ff);
-    -webkit-background-clip: text;
-    color: transparent;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
   }
 
   .home-content {
-    padding: 40px;
-    text-align: center;
-    animation: fadeIn 1s ease forwards;
+    padding: 20px;
   }
-
-  .video-btn-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-  }
-
-  .video-btn-wrapper a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    transition: 0.3s ease;
-  }
-
-  .video-btn-wrapper a:hover {
-    background: #ff007f;
-  }
-
-  .contactt {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    flex-wrap: wrap;
-  }
-
-  .ctt {
-    background: linear-gradient(90deg, rgba(217,124,158,1) 0%, rgba(72,139,232,1) 50%, rgba(217,124,158,1) 100%);
-    padding: 30px;
-    border-radius: 12px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    animation: fadeIn 1.5s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @media (max-width: 768px) {
-    nav.nav-bar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .nav-links {
-      position: static;
-      transform: none;
-      margin-top: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .logo {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      padding: 6px 10px;
-    }
-  }
+}
 </style>
 
 <nav class="nav-bar">
   <div class="logo">KERU BEATS</div>
+  <div class="sound-wave">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="pricing.html">Pricing</a></li>
@@ -157,14 +140,7 @@
 
 <div class="home-content">
   <h2>DJ FOR HIRE</h2>
-  <p>
-    Turn up the volume with <b>KERU Beats</b>! We bring the party to you with high-quality sound, pro-level DJ skills, and vibes that get everyone moving.<br>
-    Check out our packages and contact us on WhatsApp & Instagram.
-  </p>
-</div>
-
-<div class="video-btn-wrapper">
-  <a href="video.html">Play Video</a>
+  <p>Turn up the volume with <b>KERU Beats</b>! We bring the party to you with high-quality sound, pro-level DJ skills, and vibes that get everyone moving.<br>Check out our packages and contact us on WhatsApp & Instagram.</p>
 </div>
 
 <div class="contactt">
@@ -173,7 +149,7 @@
     <b>072 350 5081</b><br>
     <b>067 780 1555</b><br><br>
     <u><strong>DM us on Instagram:</strong></u><br>
-    <a href="https://www.instagram.com/keru.beatz?igsh=MW54ZnhyNjN4dGM0cA==" style="color: white;">keru.beats</a>
+    <a href="https://www.instagram.com/keru.beatz?igsh=MW54ZnhyNjN4dGM0cA==">keru.beats</a>
   </div>
 </div>
 
