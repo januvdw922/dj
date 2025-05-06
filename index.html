@@ -120,29 +120,19 @@
   }
 
   /* Responsive Nav - Keep logo and links in one row on small screens */
-  @media (max-width: 600px) {
-    nav.nav-bar {
-      flex-wrap: nowrap;
-      flex-direction: row;
-      overflow-x: auto;
-    }
-
-    .logo {
-      font-size: 20px;
-      margin-right: 10px;
-    }
-
-    .nav-links {
-      gap: 10px;
-      flex: 1;
-      flex-wrap: nowrap;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      padding: 6px 10px;
-    }
+ @media (max-width: 600px) {
+  .nav-bar {
+    flex-direction: row; /* ensure row layout */
+    justify-content: space-between; /* logo left, links right */
+    align-items: center;
   }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 10px;
+    margin-left: auto; /* push to right */
+  }
+}
 </style>
 
 <!-- Navigation -->
