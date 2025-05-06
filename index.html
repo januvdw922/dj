@@ -20,42 +20,37 @@
 
   nav.nav-bar {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     background: rgba(0, 0, 0, 0.4);
     margin: 10px;
     border-radius: 12px;
     backdrop-filter: blur(10px);
+    flex-wrap: wrap;
   }
 
   .logo {
     font-weight: 800;
     font-size: 24px;
-    letter-spacing: 1px;
+    margin-right: 20px;
+    white-space: nowrap;
   }
 
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     padding: 0;
     margin: 0;
-    flex-grow: 1;
-    justify-content: center;
-  }
-
-  .nav-links li {
-    display: inline;
+    flex-wrap: wrap;
   }
 
   .nav-links a {
     text-decoration: none;
     color: white;
     font-weight: 600;
-    font-size: 18px;
-    padding: 8px 16px;
+    font-size: 16px;
+    padding: 8px 14px;
     border-radius: 8px;
     background: rgba(255,255,255,0.1);
     transition: 0.3s ease;
@@ -81,6 +76,27 @@
     animation: fadeIn 1s ease forwards;
   }
 
+  .vbb {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+  }
+
+  .vbb a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    transition: 0.3s ease;
+  }
+
+  .vbb a:hover {
+    background: #ff007f;
+  }
+
   .contactt {
     display: flex;
     justify-content: center;
@@ -103,93 +119,29 @@
     to { opacity: 1; transform: translateY(0);}
   }
 
-  .pricing-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    padding: 40px;
-    background: linear-gradient(90deg, rgba(155, 42, 83, 1) 0%, rgba(13, 84, 184, 1) 50%, rgba(155, 42, 83, 1) 100%);
-  }
-
-  .pricing-card {
-    background: linear-gradient(90deg, rgba(217, 124, 158, 1) 0%, rgba(72, 139, 232, 1) 100%);
-    color: white;
-    padding: 30px;
-    border-radius: 16px;
-    width: 260px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(255, 0, 144, 0.4);
-    transition: transform 0.3s ease;
-  }
-
-  .pricing-card:hover {
-    transform: scale(1.05);
-  }
-
-  .pricing-card h2 {
-    font-size: 26px;
-    margin-bottom: 15px;
-  }
-
-  .pricing-card p {
-    margin: 8px 0;
-    font-size: 16px;
-  }
-
-  .pricing-card h3 {
-    margin-top: 20px;
-    font-size: 30px;
-    color: #ff007f;
-  }
-
-  .premium {
-    border: 3px solid #ff007f;
-  }
-
-  @media (max-width: 768px) {
-    .nav-bar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .nav-links {
-      justify-content: flex-start;
-      width: 100%;
-      margin-top: 10px;
-      gap: 10px;
-    }
-
-    .nav-links li a {
-      font-size: 14px;
-      padding: 5px 10px;
+  /* Responsive Nav - Keep logo and links in one row on small screens */
+  @media (max-width: 600px) {
+    nav.nav-bar {
+      flex-wrap: nowrap;
+      flex-direction: row;
+      overflow-x: auto;
     }
 
     .logo {
       font-size: 20px;
+      margin-right: 10px;
     }
-  }
 
-  .vbb {
-    display: flex;
-    justify-content: center;
-    margin: 30px auto;
-  }
+    .nav-links {
+      gap: 10px;
+      flex: 1;
+      flex-wrap: nowrap;
+    }
 
-  .vbb a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.1);
-    transition: 0.3s ease;
-  }
-
-  .vbb a:hover {
-    background: #ff007f;
-    color: white;
+    .nav-links a {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
   }
 </style>
 
