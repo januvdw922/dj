@@ -14,16 +14,12 @@
 <body>
 <style>
     /* Base Styles */
-  body {
+body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top left, rgba(13, 84, 184, 0.8), transparent 60%),
-              radial-gradient(circle at bottom right, rgba(155, 42, 83, 0.8), transparent 60%),
-              linear-gradient(135deg, #0d54b8, #9b2a53);
-  background-blend-mode: overlay;
+  background: linear-gradient(90deg, rgb(155, 42, 83) 0%, rgba(13,84,184,1) 50%, rgba(155,42,83,1) 1010%);
   color: white;
 }
-
 
 /* Navigation */
 nav.nav-bar {
@@ -114,20 +110,20 @@ nav.nav-bar {
 }
 
 /* Responsive Design */
-/* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .nav-links {
+    flex-direction: column;
     gap: 10px;
+    margin-top: 10px;
   }
 
-  .nav-links li a {
-    font-size: 14px;
-    padding: 5px 8px;
-  }
-
-  .logo {
-    font-size: 20px;
-    text-align: center;
+  .home-content {
+    padding: 20px;
   }
 }
 
@@ -190,45 +186,72 @@ nav.nav-bar {
         text-align: center;
     }
 }
-.vbb-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.vbb {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  border: rgba(255,255,255,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .vbb a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
-  transition: 0.3s ease;
-}
 
+text-decoration: none;
+color: white;
+font-weight: 600;
+font-size: 18px;
+padding: 8px 16px;
+border-radius: 8px;
+background: rgba(255,255,255,0.1);
+transition: 0.3s ease;
+}
 .vbb a:hover {
-  background: #ff007f;
-  color: white;
+background: #ff007f;
+color: white;
 }
-
-
+.vbb {
+list-style: none;
+display: flex;
+gap: 20px;
+padding: 0;
+margin: 0;
+background: rgba(255,255,255,0.1);
+border-radius: 10px;
+border: rgba(255,255,255,0.1);
+justify-self: center;
+}
 @media (max-width: 600px) { 
   .vbb { 
 justify-content: center;
 width:fit-content;
+
+}
+}
+
+
+
+
+
+
+.bbb:hover {
+  background: #ff007f;
+
+}
+
+.bbb {
+list-style: none;
+display: flex;
+gap: 20px;
+padding: 0;
+margin: 0;
+background: rgba(255,255,255,0.1);
+border-radius: 10px;
+
+height:fit-content
+width: 100px;
+justify-content: center;
+justify-self:center;
+justify-content: center;
+color: white;
+}
+
+@media (max-width: 600px) { 
+  .bbb { 
+justify-content: center;
+width: fit-content;
 
 }
 }
@@ -237,9 +260,15 @@ width:fit-content;
 
 <nav class="nav-bar">
   <div class="logo">KERU BEATS</div>
+  <div class="sound-wave">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    
+    
+  </div>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+   <li><a href="index.html">Home</a></li>
     <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="book.html">Book Your DJ</a></li>
   </ul>
 </nav>
  
@@ -252,11 +281,9 @@ width:fit-content;
     <p>Turn up the volume with <b>KERU Beats</b>! We bring the party to you with high-quality sound, pro-level DJ skills, and vibes that get everyone moving.<br>Check out our packages and contact us on WhatsApp & Instagram.</p>
   </div>
 
-<div class="vbb-wrapper">
   <button class="vbb">
     <a href="video.html">Play video</a>
   </button>
-</div>
 
   <div class="contactt">
     <div class="ctt">
@@ -265,6 +292,7 @@ width:fit-content;
       <b>067 780 1555</b><br><br>
       <u><strong>DM us on Instagram:</strong></u><br>
       <a href="https://www.instagram.com/keru.beatz?igsh=MW54ZnhyNjN4dGM0cA==">keru.beats</a>
+     
     </div>
   </div>
 

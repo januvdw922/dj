@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DJ Booking</title>
   <link rel="icon" href="favicon.png" type="image/png">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     body {
       background: linear-gradient(to right, #6a11cb, #2575fc);
@@ -37,29 +36,42 @@
       font-size: 18px;
       cursor: pointer;
     }
+
+
     @media (max-width: 400px) {
-      body {
-        font-size: 14px;
-      }
-      input, select, button {
-        font-size: 13px;
-      }
+
+        body {
+
+            font-size: 14px;
+        }
+        input,select, button {
+            font-size: 13px;
+        }
     }
+
+
+
+
+
+
+
+
+
+     
   </style>
 </head>
 <body>
+  
 
+</div>
   <h2>Book Your DJ</h2>
 
   <form id="bookingForm">
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" placeholder="e.g. John" required>
-
     <label for="package">Choose a Package:</label>
     <select id="package" required>
       <option value="" disabled selected>Select a package</option>
-      <option value="Standard">Standard Package - R300/hr</option>
-      <option value="Premium">Premium Package - R350/hr</option>
+      <option value="Standard Package">Standard Package - R300/hr</option>
+      <option value="Premium Package">Premium Package - R350/hr</option>
     </select>
 
     <label for="hours">Number of Hours:</label>
@@ -71,50 +83,29 @@
     <button type="submit">Send to WhatsApp</button>
   </form>
 
-<script>
-  document.getElementById("bookingForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const packageValue = document.getElementById("package").value;
+      const hours = document.getElementById("hours").value;
+      const date = document.getElementById("date").value;
 
-    const name = document.getElementById("name").value;
-    const packageChoice = document.getElementById("package").value;
-    const hours = parseInt(document.getElementById("hours").value);
-    const date = document.getElementById("date").value;
+      // Set price
+      const rate = packageValue.includes("Standard") ? 300 : 350;
+      const total = rate * hours;
 
-    const rate = packageChoice === "Standard" ? 300 : 350;
-    const total = rate * hours;
+      const message = 'Hi, I want to book the ${packageValue} for ${hours} hour(s) on ${date}. Total price: R${total}.';
 
-    const message = `Hi, my name is ${name}. I want to book the ${packageChoice} Package for ${hours} hour(s) on ${date}. Total price: R${total}.`;
+      // Replace with your real WhatsApp number (no + or spaces)
+      const phone = "27828490048";
+      const url = 'https://wa.me/${phone}?text=${encodeURIComponent(message)}';
 
-    // PDF GENERATION
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(20);
-    doc.text("KERU BEATS - Booking Invoice", 20, 20);
-
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(14);
-    doc.text(`Name: ${name}`, 20, 40);
-    doc.text(`Package: ${packageChoice} Package`, 20, 50);
-    doc.text(`Date: ${date}`, 20, 60);
-    doc.text(`Hours: ${hours}`, 20, 70);
-    doc.text(`Rate: R${rate}/hr`, 20, 80);
-    doc.setFont("helvetica", "bold");
-    doc.text(`Total Price: R${total}`, 20, 100);
-
-    doc.setFont("helvetica", "italic");
-    doc.setFontSize(12);
-    doc.text("This is your official booking invoice. Prices are fixed and verified by KERU BEATS.", 20, 120);
-
-    doc.save(`KERU_Invoice_${name}.pdf`);
-
-    // WhatsApp redirect
-    const phone = "27677801555";
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  });
-</script>
+      console.log("directing to WhatsApp:", url)
+      // Open WhatsApp
+      window.open(url, "_blank");
+    });
+  </script>
 
 </body>
 </html>

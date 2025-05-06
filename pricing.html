@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing - KERU</title>
 
   <!-- Google Font -->
@@ -12,196 +12,239 @@
 </head>
 <body>
   <style>
-    body {
+    /* Base Styles */
+body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top left, rgba(13, 84, 184, 0.8), transparent 60%),
-              radial-gradient(circle at bottom right, rgba(155, 42, 83, 0.8), transparent 60%),
-              linear-gradient(135deg, #0d54b8, #9b2a53);
-  background-blend-mode: overlay;
+  background: linear-gradient(90deg,rgba(13,84,184,1) 00%, rgba(155,42,83,1) 50%, rgb(155, 42, 83) 50% );  
   color: white;
 }
 
-    /* Navigation */
-    nav.nav-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background: rgba(0, 0, 0, 0.4);
-      margin: 10px;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      flex-wrap: nowrap;
+/* Navigation */
+nav.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  margin: 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: #ff007f;
+  color: white;
+}
+
+/* Slogan */
+.slo {
+  text-align: center;
+  font-size: 24px;
+  padding: 15px 10px;
+  background: linear-gradient(to right, #ff007f, #8f00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Home Content */
+.home-content {
+  padding: 40px;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Contact Section */
+.contactt {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.ctt {
+  background: linear-gradient(90deg, rgba(217,124,158,1) 0%, rgba(72,139,232,1) 50%, rgba(217,124,158,1) 100%);
+  padding: 30px;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .home-content {
+    padding: 20px;
+  }
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px;
+    background: linear-gradient(90deg,rgba(13,84,184,1) 00%, rgba(155,42,83,1) 50%, rgb(155, 42, 83) 50% );}
+
+.pricing-card {
+    background: linear-gradient(90deg, rgba(217, 124, 158, 1) 0%, rgba(72, 139, 232, 1) 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 0, 144, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+}
+
+.pricing-card h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.pricing-card p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.pricing-card h3 {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #ff007f;
+}
+
+.premium {
+    border: 3px solid #ff007f;
+}
+/* Mobile small fix: keep nav side-by-side but smaller */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+        padding: 5px 8px;
     }
 
     .logo {
-      font-weight: 800;
-      font-size: 24px;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-links li {
-      display: inline;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      font-size: 18px;
-      padding: 8px 16px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.1);
-      transition: 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      background: #ff007f;
-      color: white;
-    }
-
-    /* Slogan */
-    .slo {
-      text-align: center;
-      font-size: 24px;
-      padding: 15px 10px;
-      background: linear-gradient(to right, #ff007f, #8f00ff);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    /* Pricing Section */
-    .pricing-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-      padding: 40px;
-      background: radial-gradient(circle at top left, rgba(13, 84, 184, 0.8), transparent 60%),
-              radial-gradient(circle at bottom right, rgba(155, 42, 83, 0.8), transparent 60%),
-              linear-gradient(135deg, #0d54b8, #9b2a53);
-  background-blend-mode: overlay;
-    }
-
-    .pricing-card {
-      background: linear-gradient(90deg, rgba(217,124,158,1) 0%, rgba(72,139,232,1) 100%);
-      color: white;
-      padding: 30px;
-      border-radius: 16px;
-      width: 260px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(255, 0, 144, 0.4);
-      transition: transform 0.3s ease;
-    }
-
-    .pricing-card:hover {
-      transform: scale(1.05);
-    }
-
-    .pricing-card h2 {
-      font-size: 26px;
-      margin-bottom: 15px;
-    }
-
-    .pricing-card p {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    .pricing-card h3 {
-      margin-top: 20px;
-      font-size: 30px;
-      color: #ff007f;
-    }
-
-    .premium {
-      border: 3px solid #ff007f;
-    }
-
-    /* Book Button */
-    .book-btn-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 30px 0;
-    }
-
-    .bbb a {
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      font-size: 18px;
-      padding: 8px 16px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.1);
-      transition: 0.3s ease;
-    }
-
-    .bbb a:hover {
-      background: #ff007f;
-      color: white;
-    }
-
-    .bbb {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      border: rgba(255,255,255,0.1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        gap: 10px;
-      }
-
-      .nav-links li a {
-        font-size: 14px;
-        padding: 5px 8px;
-      }
-
-      .logo {
         font-size: 20px;
         text-align: center;
-        white-space: nowrap;
-      }
-
-      .nav-bar {
-        flex-direction: row;
-        flex-wrap: nowrap;
-      }
     }
+}
 
-    @media (max-width: 600px) {
-      .bbb {
-        justify-content: center;
-        width: auto;
-      }
-    }
-  </style>
+.bbb a {
+
+text-decoration: none;
+color: white;
+font-weight: 600;
+font-size: 18px;
+padding: 8px 16px;
+border-radius: 8px;
+background: rgba(255,255,255,0.1);
+transition: 0.3s ease;
+
+
+
+}
+
+
+
+.bbb:hover {
+  background: #ff007f;
+
+}
+
+.bbb {
+list-style: none;
+display: flex;
+gap: 20px;
+padding: 0;
+margin: 0;
+background: rgba(255,255,255,0.1);
+border-radius: 10px;
+
+height:fit-content
+width: 100px;
+justify-content: center;
+justify-self:center;
+justify-content: center;
+color: white;
+}
+
+@media (max-width: 600px) { 
+  .bbb { 
+justify-content: center;
+width: fit-content;
+
+}
+}
+
+
+
+</style>
 
   <nav class="nav-bar">
     <div class="logo">KERU BEATS</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="book.html">Book Your DJ</a></li>
+
     </ul>
   </nav>
+
 
   <h3 class="slo">Our Packages</h3>
 
@@ -222,11 +265,13 @@
     </div>
   </div>
 
-  <div class="book-btn-container">
-    <button class="bbb">
-      <a href="book.html">Book Your DJ</a>
-    </button>
-  </div>
+
+
+  
+    
+    <br>
+  
+<br><br>
 
 </body>
 </html>
