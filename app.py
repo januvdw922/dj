@@ -2,6 +2,28 @@ from flask import Flask, render_template, request, redirect
 from fpdf import FPDF
 import os
 import urllib.parse
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/book')
+def book():
+    return render_template('book.html')
+
+@app.route('/pricing')
+def pricing():
+    return render_template('pricing.html')
+
+@app.route('/video')
+def video():
+    return render_template('video.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 app = Flask(__name__)
 PDF_FOLDER = 'pdfs'
