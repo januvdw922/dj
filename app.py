@@ -3,7 +3,7 @@ from fpdf import FPDF
 import os
 from datetime import datetime
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Ensure the 'pdfs' folder exists
 if not os.path.exists("pdfs"):
@@ -49,5 +49,5 @@ def book():
 
     return render_template('book.html')
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)

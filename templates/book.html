@@ -85,28 +85,7 @@
     <button type="submit">Send to WhatsApp</button>
   </form>
 
-<script>
-  document.getElementById("bookingForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const name = document.getElementById("name").value;
-    const packageValue = document.getElementById("package").value;
-    const hours = document.getElementById("hours").value;
-    const date = document.getElementById("date").value;
 
-    // Set price
-    const rate = packageValue.includes("Standard") ? 300 : 350;
-    const total = rate * hours;
-
-    // Use backticks for template strings (important!)
-    const message = `Hi, my name is ${name}. I want to book the ${packageValue} for ${hours} hour(s) on ${date}. Total price: R${total}.`;
-
-    const phone = "27677801555";
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-    console.log("Redirecting to WhatsApp:", url);
-    window.open(url, "_blank");
-  });
-</script>
 
 </body>
 </html>
