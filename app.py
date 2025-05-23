@@ -1,66 +1,52 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 from fpdf import FPDF
 import os
-import urllib.parse
-from flask import Flask, render_template, request
+from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(_name_)
 
+# Home page
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/book')
-def book():
-    return render_template('book.html')
-
+# Pricing page
 @app.route('/pricing')
 def pricing():
     return render_template('pricing.html')
 
-@app.route('/video')
-def video():
-    return render_template('video.html')
+# Book page
+@app.route('/book', methods=['GET', 'POST'])
+def book():
+    if request.method == 'POST':
+        name = request.form['name']
+        package = request.form['package']
+        hours = request.form['hours']
+        event_time = request.form['event_time']
 
-if __name__ == '__main__':
-    app.run(debug=True)
+        # Create PDF
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font("Arial", size=12)
+        pdf.cell(200, 10, txt="DJ Booking Confirmation", ln=True, align='C')
+        pdf.cell(200, 10, txt=f"Name: {name}", ln=True)
+        pdf.cell(200, 10, txt=f"Package: {package}", ln=True)
+        pdf.cell(200, 10, txt=f"Hours: {hours}", ln=True)
+        pdf.cell(200, 10, txt=f"When: {event_time}", ln=True)
 
-app = Flask(__name__)
-PDF_FOLDER = 'pdfs'
-os.makedirs(PDF_FOLDER, exist_ok=True)
+        # Save PDF
+        now = datetime.now().strftime("%Y%m%d%H%M%S")
+        filename = f"{name.replace(' ', '')}{now}.pdf"
+        filepath = os.path.join("pdfs", filename)
+        pdf.output(filepath)
 
-@app.route('/')
-def home():
+        # Create WhatsApp message
+        message = f"Hi, here is your DJ booking confirmation:\nhttps://yourdomain.com/{filepath}"
+        whatsapp_url = f"https://wa.me/?text={message.replace(' ', '%20')}"
+
+        return redirect(whatsapp_url)
+
     return render_template('book.html')
 
-@app.route('/book', methods=['POST'])
-def book_dj():
-    name = request.form['name']
-    package = request.form['package']
-    hours = request.form['hours']
-    date = request.form['date']
-
-    # Create PDF
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font("Arial", size=12)
-    pdf.cell(200, 10, txt="DJ Booking Confirmation", ln=True)
-    pdf.cell(200, 10, txt=f"Client Name: {name}", ln=True)
-    pdf.cell(200, 10, txt=f"Package Selected: {package}", ln=True)
-    pdf.cell(200, 10, txt=f"Number of Hours: {hours}", ln=True)
-    pdf.cell(200, 10, txt=f"Booking Date: {date}", ln=True)
-
-    filename = f"{name}{package}_invoice.pdf".replace(" ", "")
-    pdf_path = os.path.join(PDF_FOLDER, filename)
-    pdf.output(pdf_path)
-
-    # WhatsApp setup (use your own number)
-    phone_number = '27828490048'  # Example SA number
-    link_to_pdf = f"https://yourdomain.com/pdfs/{filename}"
-    message = f"Hey! Here’s your DJ booking confirmation: {link_to_pdf}"
-    whatsapp_url = f"https://wa.me/{phone_number}?text={urllib.parse.quote(message)}"
-
-    return redirect(whatsapp_url)
-
-if __name__ == '__main__':
+if _name_ == '_main_':
     app.run(debug=True)
