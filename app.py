@@ -1,13 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect
 from fpdf import FPDF
 import os
 from datetime import datetime
 
 app = Flask(__name__)
-
-# Ensure the 'pdfs' folder exists
-if not os.path.exists("pdfs"):
-    os.makedirs("pdfs")
 
 @app.route('/')
 def index():
@@ -35,15 +31,21 @@ def book():
         pdf.cell(200, 10, txt=f"Hours: {hours}", ln=True)
         pdf.cell(200, 10, txt=f"When: {event_time}", ln=True)
 
-        # Save PDF
+        # Save PDF to static/pdfs/
         now = datetime.now().strftime("%Y%m%d%H%M%S")
         filename = f"{name.replace(' ', '')}{now}.pdf"
-        filepath = os.path.join("pdfs", filename)
+        pdf_folder = os.path.join("static", "pdfs")
+        os.makedirs(pdf_folder, exist_ok=True)
+        filepath = os.path.join(pdf_folder, filename)
         pdf.output(filepath)
 
-        # Create WhatsApp message
-        message = f"Hi, here is your DJ booking confirmation:\nhttps://yourdomain.com/{filepath}"
-        whatsapp_url = f"https://wa.me/?text={message.replace(' ', '%20')}"
+        # Public URL to the PDF on your live site
+        public_url = f"https://dj-imln.onrender.com/static/pdfs/{filename}"
+
+        # WhatsApp message and link
+        message = f"Hi, here is your DJ booking confirmation:\n{public_url}"
+        whatsapp_number = "27828490048"  # International format
+        whatsapp_url = f"https://wa.me/{whatsapp_number}?text={message.replace(' ', '%20')}"
 
         return redirect(whatsapp_url)
 
