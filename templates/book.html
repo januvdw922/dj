@@ -71,13 +71,17 @@
     <input type="text" name="name" required><br>
 
     <label>Package:</label>
-    <input type="text" name="package" required><br>
+    <select type="text" name="package" required>
+      <option value="Standard(R300/h)">Standard(R300/h)</option>
+      <option value="Premium(R350/h)">Premium(R350/h)</option>
+
+    </select><br>
 
     <label>Hours:</label>
     <input type="number" name="hours" required><br>
 
-    <label>Event Time:</label>
-    <input type="text" name="event_time" required><br>
+    <label>Date:</label>
+    <input type="date" name="date" required><br>
 
     <button type="submit">Submit</button>
 </form>
