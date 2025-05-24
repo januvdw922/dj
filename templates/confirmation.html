@@ -1,90 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Booking Sent</title>
-</head>
-<body>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation</title>
+  <style>
     body {
       background: linear-gradient(to right, #6a11cb, #2575fc);
       color: white;
       font-family: sans-serif;
       display: flex;
       flex-direction: column;
-     
-      padding-top: 50px;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
     }
-    a.download-link {
-  color: white;
-  text-decoration: none;
-}
 
+    h1, h2 {
+      margin: 10px 0;
+    }
 
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 10px 0;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
 
+    a.button:hover {
+      background-color: #1ebd5a;
+    }
 
-.download-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
+    .download-wrapper {
+      margin-top: 20px;
+    }
 
-.download {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  border: rgba(255,255,255,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .pdf-button {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
-.download a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
-  transition: 0.3s ease;
-}
+    .pdf-button:hover {
+      background-color: #ff007f;
+    }
 
-.download a:hover {
-  background: #ff007f;
-  color: white;
-}
-@media (max-width: 600px) { 
-  .download { 
-justify-content: center;
-width:fit-content;
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 10px;
+      }
+      a.button {
+        font-size: 14px;
+        padding: 10px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+    
 
-}
-}
-      
-      </style>
-    <h1 align="center">Success!</h1>
-    <h2 align="center">Your booking confirmation is ready!</h2><br><br>
-    <h2 > Send the PDF to the DJ (Ruan) on Whatsapp to make a booking:</h2>
-     
-   <p >
-  <a href="{{ whatsapp_url }}" target="_blank" style="padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 8px;">
+  <h1>Success!</h1>
+  <h2>Your booking confirmation is ready!</h2><br><br>
+
+  <h2>Send the PDF to the DJ (Ruan) via WhatsApp:</h2>
+  <a href="{{ whatsapp_url }}" target="_blank" class="button">
     Send on WhatsApp
   </a>
-</p>
- <br>
-    
-    <h2 >*view your booking PDF to make sure your booking information is correct:
-    </h2>
-  <h2 >
-  <button class="download" ><a href="{{ pdf_url }}" target="_blank" class="download-link">
-    Download Your PDF
-  </a></button>
-</h2>
+<br>
+  <h2>*View your booking PDF to confirm your booking info:</h2>
+  <div class="download-wrapper">
+    <a href="{{ pdf_url }}" target="_blank" class="button pdf-button">
+      Download Your PDF
+    </a>
+  </div>
 
-    <br><br>
-    
-  
 </body>
 </html>
