@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect
+# app.py
+from flask import Flask, render_template, request
 from fpdf import FPDF
 import os
 from datetime import datetime
@@ -21,7 +22,6 @@ def book():
         hours = request.form['hours']
         event_time = request.form['event_time']
 
-        # Create PDF
         pdf = FPDF()
         pdf.add_page()
         pdf.set_font("Arial", size=12)
@@ -31,7 +31,6 @@ def book():
         pdf.cell(200, 10, txt=f"Hours: {hours}", ln=True)
         pdf.cell(200, 10, txt=f"When: {event_time}", ln=True)
 
-        # Save PDF to static/pdfs/
         now = datetime.now().strftime("%Y%m%d%H%M%S")
         filename = f"{name.replace(' ', '')}{now}.pdf"
         pdf_folder = os.path.join("static", "pdfs")
@@ -39,17 +38,14 @@ def book():
         filepath = os.path.join(pdf_folder, filename)
         pdf.output(filepath)
 
-        # Public URL to the PDF on your live site
         public_url = f"https://dj-imln.onrender.com/static/pdfs/{filename}"
-
-        # WhatsApp message and link
-        message = f"Hi, here is your DJ booking confirmation:\n{public_url}"
-        whatsapp_number = "27828490048"  # International format
+        message = f"Hey, here's your DJ booking confirmation: {public_url}"
+        whatsapp_number = "27828490048"
         whatsapp_url = f"https://wa.me/{whatsapp_number}?text={message.replace(' ', '%20')}"
 
-        return redirect(whatsapp_url)
+        return render_template("confirmation.html", pdf_url=public_url, whatsapp_url=whatsapp_url)
 
-    return render_template('book.html')
+    return render_template("book.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
