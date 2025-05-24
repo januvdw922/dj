@@ -20,7 +20,8 @@ def book():
         name = request.form['name']
         package = request.form['package']
         hours = request.form['hours']
-        event_time = request.form['event_time']
+        event_time = request.form['date']
+
 
         pdf = FPDF()
         pdf.add_page()
