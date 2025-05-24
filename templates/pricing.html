@@ -189,13 +189,10 @@
     }
   </style>
 
-  <nav class="nav-bar">
-    <div class="logo">KERU BEATS</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-    </ul>
-  </nav>
+ <ul class="nav-links">
+  <li><a href="{{ url_for('index') }}">Home</a></li>
+  <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+</ul>
 
   <h3 class="slo">Our Packages</h3>
 
