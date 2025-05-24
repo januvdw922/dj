@@ -41,7 +41,7 @@ def book():
 
         public_url = f"https://dj-imln.onrender.com/static/pdfs/{filename}"
         message = f"Hey, here's your DJ booking confirmation: {public_url}"
-        whatsapp_number = "27828490048"
+        whatsapp_number = "27677801555"
         whatsapp_url = f"https://wa.me/{whatsapp_number}?text={message.replace(' ', '%20')}"
 
         return render_template("confirmation.html", pdf_url=public_url, whatsapp_url=whatsapp_url)
