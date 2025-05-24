@@ -4,12 +4,87 @@
     <title>Booking Sent</title>
 </head>
 <body>
-    <h1>Success!</h1>
-    <h2>Your booking confirmation is ready:</h2>
-   <h2><a href="{{ pdf_url }}" target="_blank">Download Your PDF</a></h2> 
+    <style>
+    body {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+     
+      padding-top: 50px;
+    }
+    a.download-link {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+.download-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.download {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  border: rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+}
+
+.download a:hover {
+  background: #ff007f;
+  color: white;
+}
+@media (max-width: 600px) { 
+  .download { 
+justify-content: center;
+width:fit-content;
+
+}
+}
+      
+      </style>
+    <h1 align="center">Success!</h1>
+    <h2 align="center">Your booking confirmation is ready!</h2><br><br>
+    <h2 > Send the PDF to the DJ (Ruan) on Whatsapp to make a booking:</h2>
+     
+   <p >
+  <a href="{{ whatsapp_url }}" target="_blank" style="padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 8px;">
+    Send on WhatsApp
+  </a>
+</p>
+ <br>
+    
+    <h2 >*view your booking PDF to make sure your booking information is correct:
+    </h2>
+  <h2 >
+  <button class="download" ><a href="{{ pdf_url }}" target="_blank" class="download-link">
+    Download Your PDF
+  </a></button>
+</h2>
+
     <br><br>
-    <a href="{{ whatsapp_url }}" target="_blank" style="padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none;">
-        Send on WhatsApp
-    </a>
+    
+  
 </body>
 </html>
